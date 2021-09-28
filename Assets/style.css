@@ -46,6 +46,7 @@ main {
 }
 
 #forecast-card{
-    display: flex;
+    display: inline-flexbox;
     flex-wrap: wrap;
+    flex: 0 0 70%;
 }
