@@ -28,6 +28,8 @@ h2 {
 
 main {
     display: flex;
+    flex-wrap: wrap;
+
 }
 
 .card {
@@ -47,7 +49,11 @@ main {
 
 #forecast-card{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     flex: 0 0 70%;
 }
+
+.break {
+    flex-basis: 0 0 70%;
+    height: 0;
+    background-color: blue;
+  }
