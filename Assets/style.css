@@ -1,0 +1,13 @@
+#weather-header {
+    background: linear-gradient(#3aa89f, #42c0b577);
+    margin-top: 20px;
+    height: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    font-size: 32px;
+    text-align: center;
+}
