@@ -15,7 +15,7 @@ h2 {
     background: linear-gradient(#3aa89f, #42c0b577);
     margin-top: 20px;
     height: 75px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Indie Flower', cursive;
     width: 100%;
 }
 
@@ -28,4 +28,17 @@ h2 {
 
 #city-card {
     border:black 1px solid;
+}
+
+#city-card p {
+    margin-left: 10px;
+}
+
+.forecast-mini-card {
+    background-color: #33475A;
+    color: white;
+}
+
+.card {
+    border: none;
 }
