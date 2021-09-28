@@ -25,3 +25,27 @@ h2 {
     background-color: #B7B7B7;
     border: none;
 }
+
+main {
+    display: flex;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 20%;
+}
+#city-card {
+    border:black 1px solid;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 70%;
+    width: 100px;
+    margin-left: 25px;
+    height: 300px;
+}
+
+#forecast-card{
+    display: flex;
+    flex-wrap: wrap;
+}
