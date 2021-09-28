@@ -49,11 +49,16 @@ main {
 
 #forecast-card{
     display: flex;
-    flex: 0 0 70%;
+   width: 100%;
 }
 
 .break {
     flex-basis: 0 0 70%;
     height: 0;
     background-color: blue;
+  }
+
+  .right-side {
+      display: flex;
+      flex-direction: column;
   }
