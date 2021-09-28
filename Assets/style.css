@@ -26,39 +26,6 @@ h2 {
     border: none;
 }
 
-main {
-    display: flex;
-    flex-wrap: wrap;
-
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 20%;
-}
 #city-card {
     border:black 1px solid;
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 70%;
-    width: 100px;
-    margin-left: 25px;
-    height: 300px;
 }
-
-#forecast-card{
-    display: flex;
-   width: 100%;
-}
-
-.break {
-    flex-basis: 0 0 70%;
-    height: 0;
-    background-color: blue;
-  }
-
-  .right-side {
-      display: flex;
-      flex-direction: column;
-  }

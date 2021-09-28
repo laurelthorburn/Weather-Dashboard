@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href=
+    "https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+            integrity=
+    "sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+            crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/style.css" />
     <title>Laurel's Weather Dashboard</title>
@@ -12,33 +17,64 @@
     <!-- weather header -->
     <div id = "weather-header"><h1>Weather Dashboard</h1></div>
     <main>
+
+
+        <!DOCTYPE html>
+        <html lang="en">
         
-        <!-- Creating search bar -->
+        <head>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1, shrink-to-fit=no">
+        
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href=
+        "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                integrity=
+        "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                crossorigin="anonymous">
+        
+            <link rel="stylesheet" href=
+        "https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+                integrity=
+        "sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+                crossorigin="anonymous">
+        
+            <title>
+                Place two bootstrap cards next to each other
+            </title>
+        </head>
+        
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
 
-        <div class="card" style="width: 18rem;">
-            <div class="card-header">
-              <h2>Search for a City:</h2>
-            </div>
-            <div class="input-group">
-                <input type="search" id = "city-name" class="form-control rounded" placeholder="Enter a City Name" aria-label="Search"
-                  aria-describedby="search-addon" />
-                <button type="button" class="btn btn-outline-primary">search</button>
-              </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><button class ="city-button">Austin</button></li>
-              <li class="list-group-item"><button class ="city-button">Chicago</button></li>
-              <li class="list-group-item"><button class ="city-button">New York</button></li>
-              <li class="list-group-item"><button class ="city-button">Orlando</button></li>
-              <li class="list-group-item"><button class ="city-button">San Francisco</button></li>
-              <li class="list-group-item"><button class ="city-button">Seattle</button></li>
-              <li class="list-group-item"><button class ="city-button">Denver</button></li>
-              <li class="list-group-item"><button class ="city-button">Atlanta</button></li>
-            </ul>
-          </div>
-
-          <!-- Creating City Display -->
-        <div class = "right-side">
-          <div id = "city-card">
+                    <div class="card" style="width: 18rem;">
+                                <div class="card-header" class="col-sm-2">
+                                  <h2>Search for a City:</h2>
+                                </div>
+                                <div class="input-group">
+                                    <input type="search" id = "city-name" class="form-control rounded" placeholder="Enter a City Name" aria-label="Search"
+                                      aria-describedby="search-addon" />
+                                    <button type="button" class="btn btn-outline-primary">search</button>
+                                  </div>
+                                <ul class="list-group list-group-flush">
+                                  <li class="list-group-item"><button class ="city-button">Austin</button></li>
+                                  <li class="list-group-item"><button class ="city-button">Chicago</button></li>
+                                  <li class="list-group-item"><button class ="city-button">New York</button></li>
+                                  <li class="list-group-item"><button class ="city-button">Orlando</button></li>
+                                  <li class="list-group-item"><button class ="city-button">San Francisco</button></li>
+                                  <li class="list-group-item"><button class ="city-button">Seattle</button></li>
+                                  <li class="list-group-item"><button class ="city-button">Denver</button></li>
+                                  <li class="list-group-item"><button class ="city-button">Atlanta</button></li>
+                                </ul>
+                              </div>
+                        </div>
+                    <div class="col-lg-9">
+                        <div class="card">
+                            <div id = "city-card">
               <h2 id="city-display-name">City Name Here (today's date) *weather img*</h2>
               <p>Temp: <span id="today-temp"></span></p>
               <p>Wind: <span id="today-wind"></span></p>
@@ -61,7 +97,11 @@
                 </div>
               </div>
           </div>
-        </div>
+                    </div>
+                </div>
+            </div>
+        
+
 
 
 
