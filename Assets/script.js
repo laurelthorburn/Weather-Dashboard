@@ -8,18 +8,23 @@ var finalUrl;
 
 function submitSearch(e){
     userCity = userInput.value; //works
-    fetchResults(e);
+    getAPI(e);
 }
 
-function fetchResults(e) {
+function getAPI(e) {
  // Use preventDefault() to stop the form submitting
- e.preventDefault();
-
+    e.preventDefault();
  // Assemble the full URL
- finalUrl = starterUrl + userCity + APIKey + unitMeasurement;
-
+    finalUrl = starterUrl + userCity + APIKey + unitMeasurement;
+fetch(finalUrl)
+.then(function (response) {
+    return response.json();
+})
+.then(function (data) {// Use the console to examine the response
+    console.log(data);
+})
  console.log(finalUrl); //confirmed works
-}
+};
 
 
 searchBtn.addEventListener('click', submitSearch);
