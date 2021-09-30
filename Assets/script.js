@@ -38,15 +38,24 @@ function getAPI(e) {
 };
 
 function saveSearch(){
-    //first save to local storage, then get from local storage then pass through append to show in page with dynamically created html
+    //need to convert save and push into an array right? then save that array to local storage first save to local storage, then get from local storage then pass through append to show in page with dynamically created html
+    var myArray = [
+        {
+            city: userCity,
+        }
+    ];
     userCity;
-    console.log(userCity); //check that has same input as above, works!
-    localStorage.setItem('City', JSON.stringify(userCity));
-    let cityBtn = JSON.parse(localStorage.getItem('City'));
+    myArray.city.push(userCity);
+    console.log(myArray); // doesn't work
 
-    for (var i = 0; i< cityBtn.length; i++){
-    $('ul').append('<li class="list-group-item"><button class ="city-button" data-city = "' + userCity + '">'+ userCity + '</button></li>') //do i need to add the /n.. probs    
-    }
+    // localStorage.setItem('City', JSON.stringify(userCity));
+    // let cityBtn = JSON.parse(localStorage.getItem('City')) || [];
+    // console.log(cityBtn)
+    // $('ul').html=""
+
+    // for (var i = 0; i< cityBtn.length; i++){
+    // $('ul').append('<li class="list-group-item"><button class ="city-button" data-city = "' + userCity + '">'+ userCity + '</button></li>') //do i need to add the /n.. probs, why is this adding it 5 times?
+    // }
 }
 
 
