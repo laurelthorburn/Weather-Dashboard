@@ -46,16 +46,15 @@ function saveSearch() {
 
     localStorage.setItem("savedCities", JSON.stringify(savedCities));
     console.log("localStorage.setItem: ", JSON.parse(localStorage.getItem("savedCities")));
-}
 
-    // localStorage.setItem('City', JSON.stringify(userCity));
-    // let cityBtn = JSON.parse(localStorage.getItem('City')) || [];
-    // console.log(cityBtn)
     // $('ul').html=""
 
-    // for (var i = 0; i< cityBtn.length; i++){
-    // $('ul').append('<li class="list-group-item"><button class ="city-button" data-city = "' + userCity + '">'+ userCity + '</button></li>') //do i need to add the /n.. probs, why is this adding it 5 times?
-    // }
+    for (var i = 0; i< savedCities.length; i++){
+    $('ul').append('<li class="list-group-item"><button class ="city-button" data-city = "' + userCity + '">'+ userCity + '</button></li>') //do i need to add the /n.. probs, why is this adding it 5 times?
+    }
+}
+
+
 
 
 
