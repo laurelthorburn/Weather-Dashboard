@@ -31,7 +31,7 @@ function getAPI(e) {
     document.getElementById('today-temp').innerHTML = data.main.temp;
     document.getElementById('today-wind').innerHTML = data.wind.speed + " MPH";
     document.getElementById('today-humidity').innerHTML = data.main.humidity;
-    document.getElementById('today-uvi').innerHTML = data.main.uvi;
+    document.getElementById('today-uvi').innerHTML = data.main.uvi; //nope, doesn't work
     })
     console.log(finalUrl); //confirmed works
     // now begin to display and style?
