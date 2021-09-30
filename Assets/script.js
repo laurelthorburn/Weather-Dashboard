@@ -49,9 +49,9 @@ function saveSearch() {
 
     // $('ul').html=""
 
-    for (var i = 0; i< savedCities.length; i++){
+    // for (var i = 0; i< savedCities.length; i++){
     $('ul').append('<li class="list-group-item"><button class ="city-button" data-city = "' + userCity + '">'+ userCity + '</button></li>') //do i need to add the /n.. probs, why is this adding it 5 times?
-    }
+    // }
 }
 
 
