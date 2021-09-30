@@ -7,6 +7,8 @@ var unitMeasurement = "&units=imperial";
 var finalUrl;
 var fiveDayUrl = 'httPs://api.openweathermap.org/data/2.5/forecast?q=';
 
+var clicked = false;
+
 //using moment to get date
 //Setting current time as a global function
 var currentDate = moment().format("MMM Do YY");
@@ -22,32 +24,33 @@ function getAPI(e) {
     e.preventDefault();
  // Assemble the full URL
     finalUrl = starterUrl + userCity + APIKey + unitMeasurement;
-    console.log(finalUrl);
+
     fetch(finalUrl)
     .then(function (response) {
     return response.json();
     })
     .then(function (data) {// Use the console to examine the response
+        $('#display-today').replaceWith('<div id = "city-card"><h2 id="city-display-name"></h2><p>Temp: <span id="today-temp"></span></p><p>Wind: <span id="today-wind"></span></p><p>Humidity: <span id="today-humidity"></span></p><p>UVI Index: <span id="today-uvi"></span></p></div>');
     document.getElementById('city-display-name').innerHTML = userCity + " (" + currentDate + ")";
-    document.getElementById('today-temp').innerHTML = data.main.temp;
+    document.getElementById('today-temp').innerHTML = data.main.temp + '°F';
     document.getElementById('today-wind').innerHTML = data.wind.speed + " MPH";
     document.getElementById('today-humidity').innerHTML = data.main.humidity + "%";
     document.getElementById('today-uvi').innerHTML = data.main.uvi; //nope, doesn't work
     })
 
     fiveDayFinalUrl = fiveDayUrl + userCity + APIKey;
-    console.log(fiveDayFinalUrl);
-    // fetch(finalUrl)
-    // .then(function (response) {
-    // return response.json();
-    // })
-    // .then(function (data) {// Use the console to examine the response
-    // document.getElementById('city-display-name').innerHTML = userCity + " (" + currentDate + ")";
-    // document.getElementById('today-temp').innerHTML = data.main.temp;
-    // document.getElementById('today-wind').innerHTML = data.wind.speed + " MPH";
-    // document.getElementById('today-humidity').innerHTML = data.main.humidity + "%";
-    // document.getElementById('today-uvi').innerHTML = data.main.uvi; //nope, doesn't work
-    // })
+
+    fetch(fiveDayFinalUrl)
+    .then(function (response) {
+    return response.json();
+    })
+    .then(function (data) {// Use the console to examine the response
+        $('#five-day-forecast').append('<div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date">Date Here</h5><p>Temp: <span id="future-temp"></span></p><p>Wind: <span id="future-wind"></span></p><p>Humidity: <span id="future-humidity"></span></p></div></div>')
+    // document.getElementById('future-date').innerHTML = currentDate; //need to change to future date
+    // document.getElementById('future-temp').innerHTML = data.main.temp; //need future temp
+    // document.getElementById('future-wind').innerHTML = data.wind.speed + " MPH"; //need future wind
+    // document.getElementById('future-humidity').innerHTML = data.main.humidity + "%"; //need future humidity
+    })
 
 
 };
@@ -61,14 +64,13 @@ function saveSearch() {
 
     // $('ul').html=""
     function displaySearch(){
-    for (var i = 0; i< savedCities.length; i++){
-    $('ul').append('<li class="list-group-item"><button class ="city-button" data-city = "' + savedCities[i] + '">'+ savedCities[i] + '</button></li>') //do i need to add the /n.. probs, why is this adding it 5 times?
-    }
+    $('ul').append('<li class="list-group-item"><button class ="city-button" data-city = "' + savedCities[savedCities.length-1] + '">'+ savedCities[savedCities.length-1] + '</button></li>') //do i need to add the /n.. probs, why is 
 };
+
+console.log(savedCities);
 
 
 }
-
 
 
 
