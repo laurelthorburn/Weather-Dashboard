@@ -5,6 +5,7 @@ var userCity;
 var starterUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
 var unitMeasurement = "&units=imperial";
 var finalUrl;
+var fiveDayUrl = 'httPs://api.openweathermap.org/data/2.5/forecast?q=';
 
 //using moment to get date
 //Setting current time as a global function
@@ -21,7 +22,7 @@ function getAPI(e) {
     e.preventDefault();
  // Assemble the full URL
     finalUrl = starterUrl + userCity + APIKey + unitMeasurement;
-
+    console.log(finalUrl);
     fetch(finalUrl)
     .then(function (response) {
     return response.json();
@@ -33,25 +34,39 @@ function getAPI(e) {
     document.getElementById('today-humidity').innerHTML = data.main.humidity + "%";
     document.getElementById('today-uvi').innerHTML = data.main.uvi; //nope, doesn't work
     })
-    // now begin to display and style?
+
+    fiveDayFinalUrl = fiveDayUrl + userCity + APIKey;
+    console.log(fiveDayFinalUrl);
+    // fetch(finalUrl)
+    // .then(function (response) {
+    // return response.json();
+    // })
+    // .then(function (data) {// Use the console to examine the response
+    // document.getElementById('city-display-name').innerHTML = userCity + " (" + currentDate + ")";
+    // document.getElementById('today-temp').innerHTML = data.main.temp;
+    // document.getElementById('today-wind').innerHTML = data.wind.speed + " MPH";
+    // document.getElementById('today-humidity').innerHTML = data.main.humidity + "%";
+    // document.getElementById('today-uvi').innerHTML = data.main.uvi; //nope, doesn't work
+    // })
+
 
 };
 
 function saveSearch() {
     var savedCities = JSON.parse(localStorage.getItem("savedCities") || "[]");
-    console.log("JSON.parse: ", savedCities);
 
     savedCities.push(userCity);
-    console.log("savedCities.push: ", savedCities);
-
     localStorage.setItem("savedCities", JSON.stringify(savedCities));
-    console.log("localStorage.setItem: ", JSON.parse(localStorage.getItem("savedCities")));
+    displaySearch();
 
     // $('ul').html=""
+    function displaySearch(){
+    for (var i = 0; i< savedCities.length; i++){
+    $('ul').append('<li class="list-group-item"><button class ="city-button" data-city = "' + savedCities[i] + '">'+ savedCities[i] + '</button></li>') //do i need to add the /n.. probs, why is this adding it 5 times?
+    }
+};
 
-    // for (var i = 0; i< savedCities.length; i++){
-    $('ul').append('<li class="list-group-item"><button class ="city-button" data-city = "' + userCity + '">'+ userCity + '</button></li>') //do i need to add the /n.. probs, why is this adding it 5 times?
-    // }
+
 }
 
 
