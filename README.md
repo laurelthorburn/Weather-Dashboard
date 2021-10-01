@@ -29,7 +29,7 @@ THEN I am again presented with current and future conditions for that city
 
 # Website Screenshot
 
-![Photo displaying weather dashboard]( gif link here (convert mov4/webm to gif: https://cloudconvert.com/webm-to-gif) )
+![Photo displaying weather dashboard](./Assets/Images/Weather-Screenshot.png)
 
 # Links
 
