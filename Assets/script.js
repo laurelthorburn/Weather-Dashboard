@@ -36,24 +36,49 @@ function getAPI(e) {
     document.getElementById('today-wind').innerHTML = data.wind.speed + " MPH";
     document.getElementById('today-humidity').innerHTML = data.main.humidity + "%";
     document.getElementById('today-uvi').innerHTML = data.main.uvi; //nope, doesn't work
-    })
+   
+})
 
-    fiveDayFinalUrl = fiveDayUrl + userCity + APIKey;
+    fiveDayFinalUrl = fiveDayUrl + userCity + APIKey + unitMeasurement;
 
     fetch(fiveDayFinalUrl)
     .then(function (response) {
     return response.json();
     })
-    .then(function (data) {// Use the console to examine the response
-        $('#five-day-forecast').append('<div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date">Date Here</h5><p>Temp: <span id="future-temp"></span></p><p>Wind: <span id="future-wind"></span></p><p>Humidity: <span id="future-humidity"></span></p></div></div>')
-    // document.getElementById('future-date').innerHTML = currentDate; //need to change to future date
-    // document.getElementById('future-temp').innerHTML = data.main.temp; //need future temp
-    // document.getElementById('future-wind').innerHTML = data.wind.speed + " MPH"; //need future wind
-    // document.getElementById('future-humidity').innerHTML = data.main.humidity + "%"; //need future humidity
-    })
+    .then(function (data) {
+        //5 day blue boxes
+        $('#five-day-forecast').replaceWith('<div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date0">Date Here</h5><p>Temp: <span id="future-temp0"></span></p><p>Wind: <span id="future-wind0"></span></p><p>Humidity: <span id="future-humidity0"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date1">Date Here</h5><p>Temp: <span id="future-temp1"></span></p><p>Wind: <span id="future-wind1"></span></p><p>Humidity: <span id="future-humidity1"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date2">Date Here</h5><p>Temp: <span id="future-temp2"></span></p><p>Wind: <span id="future-wind2"></span></p><p>Humidity: <span id="future-humidity2"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date3">Date Here</h5><p>Temp: <span id="future-temp3"></span></p><p>Wind: <span id="future-wind3"></span></p><p>Humidity: <span id="future-humidity3"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date4">Date Here</h5><p>Temp: <span id="future-temp4"></span></p><p>Wind: <span id="future-wind4"></span></p><p>Humidity: <span id="future-humidity4"></span></p></div></div>')
 
+        // for (var i = 0; i < data.list.length; i = i+8){
+        //     console.log(data.list[i]);
+//Future Day 1
+            document.getElementById('future-date0').replaceWith(currentDate); //need to change to future date
+            document.getElementById('future-temp0').replaceWith(data.list[0].main.temp); //need future temp
+            document.getElementById('future-wind0').replaceWith(data.list[0].wind.speed + " MPH"); //need future wind
+            document.getElementById('future-humidity0').replaceWith(data.list[0].main.humidity + "%"); //need future humidity
+//Future Day 2
+            document.getElementById('future-date1').replaceWith(currentDate); //need to change to future date
+            document.getElementById('future-temp1').replaceWith(data.list[1].main.temp); //need future temp
+            document.getElementById('future-wind1').replaceWith(data.list[1].wind.speed + " MPH"); //need future wind
+            document.getElementById('future-humidity1').replaceWith(data.list[1].main.humidity + "%"); //need future humidity
+//Future Day 1
+            document.getElementById('future-date2').replaceWith(currentDate); //need to change to future date
+            document.getElementById('future-temp2').replaceWith(data.list[2].main.temp); //need future temp
+            document.getElementById('future-wind2').replaceWith(data.list[2].wind.speed + " MPH"); //need future wind
+            document.getElementById('future-humidity2').replaceWith(data.list[2].main.humidity + "%"); //need future humidity
+//Future Day 1
+            document.getElementById('future-date3').replaceWith(currentDate); //need to change to future date
+            document.getElementById('future-temp3').replaceWith(data.list[3].main.temp); //need future temp
+            document.getElementById('future-wind3').replaceWith(data.list[3].wind.speed + " MPH"); //need future wind
+            document.getElementById('future-humidity3').replaceWith(data.list[3].main.humidity + "%"); //need future humidity
+//Future Day 1
+            document.getElementById('future-date4').replaceWith(currentDate); //need to change to future date
+            document.getElementById('future-temp4').replaceWith(data.list[4].main.temp); //need future temp
+            document.getElementById('future-wind4').replaceWith(data.list[4].wind.speed + " MPH"); //need future wind
+            document.getElementById('future-humidity4').replaceWith(data.list[4].main.humidity + "%"); //need future humidity
 
-};
+        // }
+})};
 
 function saveSearch() {
     var savedCities = JSON.parse(localStorage.getItem("savedCities") || "[]");
@@ -66,9 +91,6 @@ function saveSearch() {
     function displaySearch(){
     $('ul').append('<li class="list-group-item"><button class ="city-button" data-city = "' + savedCities[savedCities.length-1] + '">'+ savedCities[savedCities.length-1] + '</button></li>') //do i need to add the /n.. probs, why is 
 };
-
-console.log(savedCities);
-
 
 }
 
