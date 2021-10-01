@@ -35,7 +35,7 @@ THEN I am again presented with current and future conditions for that city
 
 Github: https://github.com/laurelthorburn/Weather-Dashboard
 
-Deployed Site: LINK HERE
+Deployed Site: https://laurelthorburn.github.io/Weather-Dashboard/
 
 
 # Resources/Credit
