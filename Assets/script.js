@@ -5,7 +5,7 @@ var userCity;
 var starterUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
 var unitMeasurement = "&units=imperial";
 var finalUrl;
-var fiveDayUrl = 'httPs://api.openweathermap.org/data/2.5/forecast?q=';
+var fiveDayUrl = "https://api.openweathermap.org/data/2.5/forecast?q=";
 
 var clicked = false;
 
@@ -29,6 +29,7 @@ function getAPI(e) {
     e.preventDefault();
  // Assemble the full URL
     finalUrl = starterUrl + userCity + APIKey + unitMeasurement;
+    console.log(finalUrl)
 
     fetch(finalUrl)
     .then(function (response) {
@@ -36,7 +37,8 @@ function getAPI(e) {
     })
     .then(function (data) {// Use the console to examine the response
         $('#display-today').replaceWith('<div id = "city-card"><h2 id="city-display-name"></h2><p>Temp: <span id="today-temp"></span></p><p>Wind: <span id="today-wind"></span></p><p>Humidity: <span id="today-humidity"></span></p><p>UVI Index: <span id="today-uvi"></span></p></div>');
-    document.getElementById('city-display-name').innerHTML = userCity + " (" + currentDate + ")";
+
+    document.getElementById('city-display-name').innerHTML = userCity + " (" + currentDate + ")" + '<img src="http://openweathermap.org/img/w/' + data.weather[0].icon + '.png"></img>';
     document.getElementById('today-temp').innerHTML = data.main.temp + '°F';
     document.getElementById('today-wind').innerHTML = data.wind.speed + " MPH";
     document.getElementById('today-humidity').innerHTML = data.main.humidity + "%";
@@ -53,13 +55,13 @@ function getAPI(e) {
     .then(function (data) {
         $('#5-day-display').replaceWith('<h3 id="5-day-display">5-Day Forecast:</h3>');
         //5 day blue boxes
-        $('#five-day-forecast').replaceWith('<div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date0">Date Here</h5><p>Temp: <span id="future-temp0"></span></p><p>Wind: <span id="future-wind0"></span></p><p>Humidity: <span id="future-humidity0"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date1">Date Here</h5><p>Temp: <span id="future-temp1"></span></p><p>Wind: <span id="future-wind1"></span></p><p>Humidity: <span id="future-humidity1"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date2">Date Here</h5><p>Temp: <span id="future-temp2"></span></p><p>Wind: <span id="future-wind2"></span></p><p>Humidity: <span id="future-humidity2"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date3">Date Here</h5><p>Temp: <span id="future-temp3"></span></p><p>Wind: <span id="future-wind3"></span></p><p>Humidity: <span id="future-humidity3"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date4">Date Here</h5><p>Temp: <span id="future-temp4"></span></p><p>Wind: <span id="future-wind4"></span></p><p>Humidity: <span id="future-humidity4"></span></p></div></div>')
+        $('#five-day-forecast').replaceWith(`<div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date0">Date Here</h5><p>Temp: <span id="future-temp0"></span></p><p>Wind: <span id="future-wind0"></span></p><p>Humidity: <span id="future-humidity0"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date1">Date Here</h5><p>Temp: <span id="future-temp1"></span></p><p>Wind: <span id="future-wind1"></span></p><p>Humidity: <span id="future-humidity1"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date2">Date Here</h5><p>Temp: <span id="future-temp2"></span></p><p>Wind: <span id="future-wind2"></span></p><p>Humidity: <span id="future-humidity2"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date3">Date Here</h5><p>Temp: <span id="future-temp3"></span></p><p>Wind: <span id="future-wind3"></span></p><p>Humidity: <span id="future-humidity3"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date4">Date Here</h5><p>Temp: <span id="future-temp4"></span></p><p>Wind: <span id="future-wind4"></span></p><p>Humidity: <span id="future-humidity4"></span></p></div></div>`)
 
 //Future Day 1
             document.getElementById('future-date0').replaceWith(future1); 
-            document.getElementById('future-temp0').replaceWith(data.list[0].main.temp); 
-            document.getElementById('future-wind0').replaceWith(data.list[0].wind.speed + " MPH"); 
-            document.getElementById('future-humidity0').replaceWith(data.list[0].main.humidity + "%"); 
+            document.getElementById('future-temp0').innerHTML =data.list[0].main.temp; 
+            document.getElementById('future-wind0').innerHTML = data.list[0].wind.speed + " MPH"; 
+            document.getElementById('future-humidity0').innerHTML = data.list[0].main.humidity + "%"; 
 //Future Day 2
             document.getElementById('future-date1').replaceWith(future2); 
             document.getElementById('future-temp1').replaceWith(data.list[1].main.temp); 
@@ -91,7 +93,7 @@ function saveSearch() {
 
     // $('ul').html=""
     function displaySearch(){
-    $('ul').append('<li class="list-group-item"><button class ="city-button" data-city = "' + savedCities[savedCities.length-1] + '">'+ savedCities[savedCities.length-1] + '</button></li>') //do i need to add the /n.. probs, why is 
+    $('ul').append('<li class="list-group-item"><button class ="city-button" data-city = "' + savedCities[savedCities.length-1] + '">'+ savedCities[savedCities.length-1] + '</button></li>') 
 };
 
 }
