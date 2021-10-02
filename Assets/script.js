@@ -107,11 +107,10 @@ function saveSearch() {
 
 }
 
-function parentClick (){
-    
+function parentClick (e){
+    userCity = $(this).data('city')
+    getAPIcurrent(e);
 }
 
 searchBtn.addEventListener('click', submitSearch);
-$('#search-parent').on('click', parentClick);
-
-//need to have the link that uses different variables throughout it, like API key and input city
+$('#search-parent').on("click", "[data-city]", parentClick)
