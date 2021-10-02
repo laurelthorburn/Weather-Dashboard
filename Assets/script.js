@@ -54,7 +54,7 @@ function getAPIfuture(e){
 
     fiveDayFinalUrl = fiveDayUrl + userCity + APIKey + unitMeasurement;
 
-    console.log(fiveDayFinalUrl);
+    // console.log(fiveDayFinalUrl);
 
     fetch(fiveDayFinalUrl)
     .then(function (response) {
@@ -112,6 +112,17 @@ function parentClick (e){
     userCity = $(this).data('city')
     getAPIcurrent(e);
 }
+
+function pageReload(){
+    var savedCities = JSON.parse(localStorage.getItem("savedCities") || "[]");
+    console.log(savedCities);
+    $('#search-parent').innerHtml = "";
+    for (let i = 0; i < savedCities.length; i++) {
+        $('#search-parent').append('<li class="list-group-item"><button class ="city-button" data-city = "' + savedCities[i] + '">'+ savedCities[i] + '</button></li>');
+    }
+}
+
+pageReload();
 
 searchBtn.addEventListener('click', submitSearch);
 $('#search-parent').on("click", "[data-city]", parentClick)
