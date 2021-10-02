@@ -54,7 +54,7 @@ function getAPIfuture(e){
 
     fiveDayFinalUrl = fiveDayUrl + userCity + APIKey + unitMeasurement;
 
-    // console.log(fiveDayFinalUrl);
+    console.log(fiveDayFinalUrl);
 
     fetch(fiveDayFinalUrl)
     .then(function (response) {
@@ -63,31 +63,36 @@ function getAPIfuture(e){
     .then(function (data) {
         $('#5-day-display').replaceWith('<h3 id="5-day-display">5-Day Forecast:</h3>');
         //5 day blue boxes
-        $('#five-day-forecast').replaceWith(`<div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date0">Date Here</h5><p id="future-icon0></p><p>Temp: <span id="future-temp0"></span></p><p>Wind: <span id="future-wind0"></span></p><p>Humidity: <span id="future-humidity0"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date1">Date Here</h5><p>Temp: <span id="future-temp1"></span></p><p>Wind: <span id="future-wind1"></span></p><p>Humidity: <span id="future-humidity1"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date2">Date Here</h5><p>Temp: <span id="future-temp2"></span></p><p>Wind: <span id="future-wind2"></span></p><p>Humidity: <span id="future-humidity2"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date3">Date Here</h5><p>Temp: <span id="future-temp3"></span></p><p>Wind: <span id="future-wind3"></span></p><p>Humidity: <span id="future-humidity3"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date4">Date Here</h5><p>Temp: <span id="future-temp4"></span></p><p>Wind: <span id="future-wind4"></span></p><p>Humidity: <span id="future-humidity4"></span></p></div></div>`)
+        $('#five-day-forecast').replaceWith(`<div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date0">Date Here</h5><p id ="future-icon0"></p><p>Temp: <span id="future-temp0"></span></p><p>Wind: <span id="future-wind0"></span></p><p>Humidity: <span id="future-humidity0"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date1">Date Here</h5><p id ="future-icon1"></p><p>Temp: <span id="future-temp1"></span></p><p>Wind: <span id="future-wind1"></span></p><p>Humidity: <span id="future-humidity1"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date2">Date Here</h5><p id ="future-icon2"></p><p>Temp: <span id="future-temp2"></span></p><p>Wind: <span id="future-wind2"></span></p><p>Humidity: <span id="future-humidity2"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date3">Date Here</h5><p id ="future-icon3"></p><p>Temp: <span id="future-temp3"></span></p><p>Wind: <span id="future-wind3"></span></p><p>Humidity: <span id="future-humidity3"></span></p></div></div><div class="card forecast-mini-card" style="width: 10rem;"><div class="card-body"><h5 class="card-title" id = "future-date4">Date Here</h5><p id ="future-icon4"></p><p>Temp: <span id="future-temp4"></span></p><p>Wind: <span id="future-wind4"></span></p><p>Humidity: <span id="future-humidity4"></span></p></div></div>`)
 
 // //Future Day 1
             $('#future-date0').text(future0); 
-            $('#future-icon0').text('<img src="http://openweathermap.org/img/w/' + data.list[0].weather.icon + '.png"></img>'); 
+            $('#future-icon0').html('<img src="http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png"></img>'); 
+            console.log(data.list[0].weather[0].icon);
             $('#future-temp0').text(data.list[0].main.temp); 
             $('#future-wind0').text(data.list[0].wind.speed + " MPH"); 
             $('#future-humidity0').text(data.list[0].main.humidity + "%"); 
 //Future Day 2
             $('#future-date1').text(future1); 
+            $('#future-icon1').html('<img src="http://openweathermap.org/img/w/' + data.list[1].weather[0].icon + '.png"></img>'); 
             $('#future-temp1').text(data.list[1].main.temp); 
             $('#future-wind1').text(data.list[1].wind.speed + " MPH"); 
             $('#future-humidity1').text(data.list[1].main.humidity + "%"); 
 //Future Day 3
             $('#future-date2').text(future2); 
+            $('#future-icon2').html('<img src="http://openweathermap.org/img/w/' + data.list[2].weather[0].icon + '.png"></img>'); 
             $('#future-temp2').text(data.list[2].main.temp); 
             $('#future-wind2').text(data.list[2].wind.speed + " MPH"); 
             $('#future-humidity2').text(data.list[2].main.humidity + "%"); 
 //Future Day 4
             $('#future-date3').text(future3); 
+            $('#future-icon3').html('<img src="http://openweathermap.org/img/w/' + data.list[3].weather[0].icon + '.png"></img>'); 
             $('#future-temp3').text(data.list[3].main.temp); 
             $('#future-wind3').text(data.list[3].wind.speed + " MPH"); 
             $('#future-humidity3').text(data.list[3].main.humidity + "%"); 
 //Future Day 5
             $('#future-date4').text(future4); 
+            $('#future-icon4').html('<img src="http://openweathermap.org/img/w/' + data.list[4].weather[0].icon + '.png"></img>'); 
             $('#future-temp4').text(data.list[4].main.temp); 
             $('#future-wind4').text(data.list[4].wind.speed + " MPH"); 
             $('#future-humidity4').text(data.list[4].main.humidity + "%"); 
