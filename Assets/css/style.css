@@ -4,7 +4,7 @@ body {
 
 h1 {
     color: white;
-    font-size: 32px;
+    font-size: 45px;
     text-align: center;
     padding-top: 20px;
 }
@@ -50,7 +50,7 @@ h2 {
 .forecast-mini-card {
     background-color: #33475A;
     color: white;
-    margin: 0 10px;
+    margin: 0 20px;
 
 }
 
