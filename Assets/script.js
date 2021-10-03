@@ -64,7 +64,16 @@ console.log(finalUrl);
         console.log(uviIndexURL);
 
         document.getElementById('today-uvi').innerHTML = data[0].value; //nope, doesn't work
-console.log(data[0].value)
+
+        if (data[0].value < 3){
+            $('#today-uvi').css('background-color', 'green');
+        } else if (data[0].value >= 3 && data[0].value < 6) {
+            $('#today-uvi').css('background-color', 'yellow');
+        } else {
+            $('#today-uvi').css('background-color', 'red');
+        };
+
+
     })
     };
 })
