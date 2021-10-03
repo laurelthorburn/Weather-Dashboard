@@ -30,7 +30,7 @@ function getAPIcurrent(e) {
     e.preventDefault();
  // Assemble the full URL
     finalUrl = starterUrl + userCity + APIKey + unitMeasurement;
-
+console.log(finalUrl);
     fetch(finalUrl)
     .then(function (response) {
     return response.json();
@@ -42,19 +42,39 @@ function getAPIcurrent(e) {
     document.getElementById('today-temp').innerHTML = data.main.temp + '°F';
     document.getElementById('today-wind').innerHTML = data.wind.speed + " MPH";
     document.getElementById('today-humidity').innerHTML = data.main.humidity + "%";
-    document.getElementById('today-uvi').innerHTML = data.main.uvi; //nope, doesn't work
+
     getAPIfuture(e);
+    getUVIindex(e);
+
+    function getUVIindex(e){
+        e.preventDefault();
+        var lat = data.coord.lat;
+        var lon = data.coord.lon;
+    
+    console.log(lat + ", " + lon);
+        let uviIndexURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + APIKey;
+    
+    
+        fetch(uviIndexURL)
+        .then(function (response) {
+        return response.json();
+        })
+        .then(function (data) {
+    
+        console.log(uviIndexURL);
+
+        document.getElementById('today-uvi').innerHTML = data[0].value; //nope, doesn't work
+console.log(data[0].value)
+    })
+    };
 })
 
 };
 
 function getAPIfuture(e){
     e.preventDefault();
-    console.log(userCity);
 
     fiveDayFinalUrl = fiveDayUrl + userCity + APIKey + unitMeasurement;
-
-    console.log(fiveDayFinalUrl);
 
     fetch(fiveDayFinalUrl)
     .then(function (response) {
@@ -68,7 +88,6 @@ function getAPIfuture(e){
 // //Future Day 1
             $('#future-date0').text(future0); 
             $('#future-icon0').html('<img src="http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png"></img>'); 
-            console.log(data.list[0].weather[0].icon);
             $('#future-temp0').text(data.list[0].main.temp); 
             $('#future-wind0').text(data.list[0].wind.speed + " MPH"); 
             $('#future-humidity0').text(data.list[0].main.humidity + "%"); 
@@ -120,7 +139,6 @@ function parentClick (e){
 
 function pageReload(){
     var savedCities = JSON.parse(localStorage.getItem("savedCities") || "[]");
-    console.log(savedCities);
     $('#search-parent').innerHtml = "";
     for (let i = 0; i < savedCities.length; i++) {
         $('#search-parent').append('<li class="list-group-item"><button class ="city-button" data-city = "' + savedCities[i] + '">'+ savedCities[i] + '</button></li>');
