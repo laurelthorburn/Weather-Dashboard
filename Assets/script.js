@@ -30,7 +30,6 @@ function getAPIcurrent(e) {
     e.preventDefault();
  // Assemble the full URL
     finalUrl = starterUrl + userCity + APIKey + unitMeasurement;
-console.log(finalUrl);
     fetch(finalUrl)
     .then(function (response) {
     return response.json();
@@ -38,7 +37,7 @@ console.log(finalUrl);
     .then(function (data) {// Use the console to examine the response
         $('#display-today').replaceWith('<div id = "city-card"><h2 id="city-display-name"></h2><p>Temp: <span id="today-temp"></span></p><p>Wind: <span id="today-wind"></span></p><p>Humidity: <span id="today-humidity"></span></p><p>UVI Index: <span id="today-uvi"></span></p></div>');
 
-    document.getElementById('city-display-name').innerHTML = userCity + " (" + currentDate + ")" + '<img src="http://openweathermap.org/img/w/' + data.weather[0].icon + '.png"></img>';
+    document.getElementById('city-display-name').innerHTML = userCity + " (" + currentDate + ")" + '<img src="http://openweathermap.org/img/w/' + data.weather[0].icon + '.png" alt="' + data.weather[0].description + '"></img>';
     document.getElementById('today-temp').innerHTML = data.main.temp + '°F';
     document.getElementById('today-wind').innerHTML = data.wind.speed + " MPH";
     document.getElementById('today-humidity').innerHTML = data.main.humidity + "%";
@@ -51,7 +50,6 @@ console.log(finalUrl);
         var lat = data.coord.lat;
         var lon = data.coord.lon;
     
-    console.log(lat + ", " + lon);
         let uviIndexURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + APIKey;
     
     
@@ -61,8 +59,6 @@ console.log(finalUrl);
         })
         .then(function (data) {
     
-        console.log(uviIndexURL);
-
         document.getElementById('today-uvi').innerHTML = data[0].value; //nope, doesn't work
 
         if (data[0].value < 3){
@@ -96,31 +92,31 @@ function getAPIfuture(e){
 
 // //Future Day 1
             $('#future-date0').text(future0); 
-            $('#future-icon0').html('<img src="http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png"></img>'); 
+            $('#future-icon0').html('<img src="http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png" alt="' + data.list[0].weather[0].description + '"></img>'); 
             $('#future-temp0').text(data.list[0].main.temp  + '°F'); 
             $('#future-wind0').text(data.list[0].wind.speed + " MPH"); 
             $('#future-humidity0').text(data.list[0].main.humidity + "%"); 
 //Future Day 2
             $('#future-date1').text(future1); 
-            $('#future-icon1').html('<img src="http://openweathermap.org/img/w/' + data.list[1].weather[0].icon + '.png"></img>'); 
+            $('#future-icon1').html('<img src="http://openweathermap.org/img/w/' + data.list[1].weather[0].icon + '.png" alt="' + data.list[1].weather[0].description + '"></img>'); 
             $('#future-temp1').text(data.list[1].main.temp  + '°F'); 
             $('#future-wind1').text(data.list[1].wind.speed + " MPH"); 
             $('#future-humidity1').text(data.list[1].main.humidity + "%"); 
 //Future Day 3
             $('#future-date2').text(future2); 
-            $('#future-icon2').html('<img src="http://openweathermap.org/img/w/' + data.list[2].weather[0].icon + '.png"></img>'); 
+            $('#future-icon2').html('<img src="http://openweathermap.org/img/w/' + data.list[2].weather[0].icon + '.png" alt="' + data.list[2].weather[0].description + '"></img>'); 
             $('#future-temp2').text(data.list[2].main.temp  + '°F'); 
             $('#future-wind2').text(data.list[2].wind.speed + " MPH"); 
             $('#future-humidity2').text(data.list[2].main.humidity + "%"); 
 //Future Day 4
             $('#future-date3').text(future3); 
-            $('#future-icon3').html('<img src="http://openweathermap.org/img/w/' + data.list[3].weather[0].icon + '.png"></img>'); 
+            $('#future-icon3').html('<img src="http://openweathermap.org/img/w/' + data.list[3].weather[0].icon + '.png" alt="' + data.list[3].weather[0].description + '"></img>'); 
             $('#future-temp3').text(data.list[3].main.temp  + '°F'); 
             $('#future-wind3').text(data.list[3].wind.speed + " MPH"); 
             $('#future-humidity3').text(data.list[3].main.humidity + "%"); 
 //Future Day 5
             $('#future-date4').text(future4); 
-            $('#future-icon4').html('<img src="http://openweathermap.org/img/w/' + data.list[4].weather[0].icon + '.png"></img>'); 
+            $('#future-icon4').html('<img src="http://openweathermap.org/img/w/' + data.list[4].weather[0].icon + '.png" alt="' + data.list[4].weather[0].description + '"></img>'); 
             $('#future-temp4').text(data.list[4].main.temp  + '°F'); 
             $('#future-wind4').text(data.list[4].wind.speed + " MPH"); 
             $('#future-humidity4').text(data.list[4].main.humidity + "%"); 
