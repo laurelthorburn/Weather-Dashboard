@@ -2,7 +2,7 @@
 ## Description
 The purpose of this project was the create a weather dashboard using a third party API (openweathermap.org).  The user is able to view today's forecast for a city of their choice along with a five day future forecast.  This project utilizes html, css, javascript, jquery, moment.js, and openweathermap.org's weather data.
 
-This project helped grow my jquery an javascript skills, especially in terms of dynamically created HTML.  In addition, since openweathermap.org no longer supports UVI data (https://openweathermap.org/api/uvi), I had to use a different link and get creative with calling on the UVI data. Lastly, I was able to work on one of my weaker skills, for loops, in order to append the searched city into a dynamically created button.
+This project helped grow my jquery and javascript skills, especially in terms of dynamically creating HTML.  In addition, since openweathermap.org no longer supports UVI data via their main link (https://openweathermap.org/api/uvi), I had to use a different link and get creative with calling on the UVI data. Lastly, I was able to work on one of my weaker skills, for loops, in order to append the user's search history into a dynamically created button.
 
 ## User Story
 
