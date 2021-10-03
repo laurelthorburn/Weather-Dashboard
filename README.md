@@ -31,7 +31,7 @@ THEN I am again presented with current and future conditions for that city
 
 # Website Screenshot
 
-![Photo displaying weather dashboard](./Assets/Images/Weather-Screenshot.png)
+![Photo displaying weather dashboard](./Assets/Images/WeatherVideo.gif)
 
 # Links
 
