@@ -40,6 +40,10 @@ h2 {
 
 #city-display-name {
     padding-left: 5px;
+    text-transform: lowercase;
+}
+
+#city-display-name::first-letter{
     text-transform: capitalize;
 }
 
@@ -56,4 +60,12 @@ h2 {
 
 .row {
     width: 100%;
+}
+
+button {
+    text-transform: lowercase;
+}
+
+button::first-letter{
+    text-transform: capitalize;
 }
