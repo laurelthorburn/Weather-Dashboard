@@ -42,6 +42,12 @@ Deployed Site: https://laurelthorburn.github.io/Weather-Dashboard/
 
 # Resources/Credit
 
-* LINK HERE
-* LINK HERE
-* LINK HERE
+* https://www.geeksforgeeks.org/how-to-place-two-bootstrap-cards-next-to-each-other/
+* https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Third_party_APIs
+* https://bithacker.dev/fetch-weather-openweathermap-api-javascript
+* https://momentjs.com/
+* https://openweathermap.org/api/uvi
+* https://www.youtube.com/watch?v=Wxnd21_f_pc&ab_channel=kudvenkat
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+* https://www.sitepoint.com/managing-dates-times-using-moment-js/
