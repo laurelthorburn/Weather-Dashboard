@@ -2,6 +2,12 @@
 ## Description
 The purpose of this project was the create a weather dashboard using a third party API (openweathermap.org).  The user is able to view today's forecast for a city of their choice along with a five day future forecast.  This project utilizes HTML, CSS, JavaScript, jQuery, moment.js, and openweathermap.org's weather data.
 
+# Links
+
+Github: https://github.com/laurelthorburn/Weather-Dashboard
+
+Deployed Site: https://laurelthorburn.github.io/Weather-Dashboard/
+
 ## User Story
 
 ```
@@ -43,12 +49,6 @@ API/Third Party Sites:
 # Website Screenshot
 
 ![Photo displaying weather dashboard](./Assets/Images/WeatherVideo.gif)
-
-# Links
-
-Github: https://github.com/laurelthorburn/Weather-Dashboard
-
-Deployed Site: https://laurelthorburn.github.io/Weather-Dashboard/
 
 # License
 * MIT
