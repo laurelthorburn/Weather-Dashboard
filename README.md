@@ -46,9 +46,14 @@ API/Third Party Sites:
 * openweathermap.org
 * moment.js
 
-# Website Screenshot
+# Website Video
 
-![Photo displaying weather dashboard](./Assets/Images/WeatherVideo.gif)
+![Video displaying weather dashboard](./Assets/Images/WeatherVideo.gif)
+
+# Website Screenshots
+
+![Photo displaying weather dashboard](./Assets/Images/Screenshot1.png)
+![Photo displaying weather dashboard](./Assets/Images/Screenshot2.png)
 
 # License
 * MIT
