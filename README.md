@@ -1,8 +1,12 @@
 # Weather Dashboard
 ## Description
-The purpose of this project was the create a weather dashboard using a third party API (openweathermap.org).  The user is able to view today's forecast for a city of their choice along with a five day future forecast.  This project utilizes html, css, javascript, jquery, moment.js, and openweathermap.org's weather data.
+The purpose of this project was the create a weather dashboard using a third party API (openweathermap.org).  The user is able to view today's forecast for a city of their choice along with a five day future forecast.  This project utilizes HTML, CSS, JavaScript, jQuery, moment.js, and openweathermap.org's weather data.
 
-This project helped grow my jquery an javascript skills, especially in terms of dynamically created HTML.  In addition, since openweathermap.org no longer supports UVI data (https://openweathermap.org/api/uvi), I had to use a different link and get creative with calling on the UVI data. Lastly, I was able to work on one of my weaker skills, for loops, in order to append the searched city into a dynamically created button.
+# Links
+
+Github: https://github.com/laurelthorburn/Weather-Dashboard
+
+Deployed Site: https://laurelthorburn.github.io/Weather-Dashboard/
 
 ## User Story
 
@@ -27,18 +31,31 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
+# Technologies:
 
+Languages:
+* CSS
+* JavaScript
+* HTML
+
+Libraries:
+* Bootstrap
+* jQuery
+
+API/Third Party Sites:
+* openweathermap.org
+* moment.js
 
 # Website Screenshot
 
 ![Photo displaying weather dashboard](./Assets/Images/WeatherVideo.gif)
 
-# Links
+# License
+* MIT
 
-Github: https://github.com/laurelthorburn/Weather-Dashboard
+# Collaborators
 
-Deployed Site: https://laurelthorburn.github.io/Weather-Dashboard/
-
+Laurel Thorburn: codinglaurel@gmail.com
 
 # Resources/Credit
 
